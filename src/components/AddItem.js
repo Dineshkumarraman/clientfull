@@ -24,14 +24,21 @@ class AddItem extends Component {
 
     render() {
       return (
+         <div className="container_out">
+          <div className="top_header">
+               <h2>Add Members</h2>
+            </div>
+            <div className="content_inner">
         <div className="container">
-          <form onSubmit={this.handleSubmit}>
+          <form className="form_content" onSubmit={this.handleSubmit}>
             <label>
-              Add Item:
+                <span>Add Member into the list</span>
               <input type="text" maxLength="10" value={this.state.value} onChange={this.handleChange} className="form-control"/>
             </label><br/>
             <input type="submit" value="Submit" className="btn btn-primary"/>
           </form>
+      </div>
+      </div>
       </div>
       );
     }

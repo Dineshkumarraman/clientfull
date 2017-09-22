@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './TableRow';
+import { Link } from 'react-router-dom';
 
 class IndexItem extends Component {
 
@@ -11,7 +12,7 @@ class IndexItem extends Component {
       this.addItemService = new ItemService();
     }
     componentWillMount(){
-      axios.get('http://13.90.196.105:4200/items')
+      axios.get('http://localhost:4200/items')
       .then(response => {
         this.setState({ items: response.data });
       })
@@ -29,18 +30,33 @@ class IndexItem extends Component {
 
     render() {
       return (
-        <div className="container">
-            <table className="table table-striped">
+        <div className="container_out">
+            <div className="top_header">
+               <h2>List the Members</h2>
+            </div>
+            <div className="top_header_add">
+              <div className="container">
+                <h3>Add Member</h3>
+                <div className="linking-button">
+                  <span> <Link to="/add-item">Add member</Link></span>
+                </div>
+             </div>
+           </div>
+           <div className="container">
+            <table className="table table-bordered">
               <thead>
                 <tr>
                   <td>No.</td>
                   <td>Item</td>
+                  <td>Edit</td>
+                  <td>Delete</td>
                 </tr>
               </thead>
               <tbody>
                 {this.tabRow()}
               </tbody>
             </table>
+            </div>
         </div>
       );
     }
