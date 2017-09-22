@@ -2,32 +2,156 @@
 	float: left;
 	width: 100%;
 	padding: 20px 0;
-	background: #eee;
+	margin-top: 200px;
 }
 
 .frontend-header{
 	float: left;
 	width: 100%;
+	height: 100vh;
+	background: url(../images/cloud_out.png) center center no-repeat;
+	background-size: cover;
 }
 
 .frontend-header h2{
 	color: #fff;
 	padding: 30px 0;
 	text-align: center;
-	background: #000;
 	margin: 0;
+	font: bold 50px/70px arial;
+	text-transform: uppercase;
+	margin-top: 150px;
+	letter-spacing: 3px;
+}
+
+
+.frontend-header h2 span{
+	color: #f2bef3;
+	width: 100%;
+	display: inline-block;
 }
 
 .linking-button{
 	float: left;
 	width: 100%;
-	margin: 100px 0;
+	margin: 30px 0;
 	text-align: center;
 }
 
 .linking-button a{
 	padding: 10px 50px;
-	background: #ff0;
-	font: 20px arial;
+	font: bold 20px arial;
 	color: #fff;
+	border: solid 2px #fff;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+.linking-button a:hover{
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+.top_header{
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.top_header h2{
+    color: #fff;
+}
+
+.top_header_add{
+	margin-top: 60px;
+}
+
+.container_out{
+	float: left;
+	width: 100%;
+	min-height: 100vh;
+	background: url(../images/page_background.png) no-repeat;
+	background-size: cover;
+}
+
+.top_header_add{
+	margin: 40px 0;
+	float: left;
+	width: 100%;
+}
+
+.top_header_add .linking-button{
+	text-align: left;
+}
+
+.top_header h2{
+	margin: 20px 0;
+}
+
+.container_out *{
+	color: #fff;
+}
+
+.content_inner{
+	float: left;
+	width: 100%;
+	margin: 60px 0 30px;
+}
+
+.form_content label{
+	margin: 0 0 20px;
+	width: 100%;
+}
+
+.form_content label span {
+    float: left;
+    width: 100%;
+    font: 20px arial;
+    text-align: center;
+}
+
+.form_content{
+	text-align: center;
+}
+
+.form_content label input[type="text"] {
+    float: none;
+    width: 50%;
+    font: 20px arial;
+    background: none;
+    border: solid 2px arial;
+    display: inline-block;
+    margin-top: 30px;
+    width: 50%;
+    padding: 10px;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+}
+
+.form_content input[type="submit"]{
+	float: none;
+	font: 20px arial;
+	background: none;
+	border: solid 2px #fff;
+	padding: 10px 30px;
+	display: inline-block;
+	width: 200px;
+	margin-top: 20px;
+}
+
+.container_out table{
+	background: rgba(0,0,0,0.7);
+}
+
+.container_out table tr td{
+	padding: 10px;
+}
+
+.container_out table thead tr td{
+	font: 20px arial;
+}
+
+.form_content input[type="submit"]:hover{
+	background: none;
+	opacity: 0.8;
 }
