@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './sendmessageTable/TableRow';
+import { Link } from 'react-router-dom';
 
 class SendMsg extends Component {
 
@@ -55,7 +56,9 @@ class SendMsg extends Component {
     render() {
       return (
       <div className="container_out">
-
+           <div className="header_link">
+                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
+            </div>
           <div className="top_header">
                <h2>RabbitMq</h2>
             </div>
@@ -81,5 +84,4 @@ class SendMsg extends Component {
       );
     }
   }
-
 export default SendMsg;
