@@ -130,7 +130,7 @@ body{
 .content_inner{
 	float: left;
 	width: 100%;
-	margin: 60px 0 30px;
+	margin: 30px 0 30px;
 }
 
 .form_content label{
@@ -204,6 +204,7 @@ body{
     border: 0;
     text-align: center;
     display: block;
+    margin: 0 auto;
 }
 .editIcon:hover,.editIcon:focus,.editIcon:active,.editIcon.active{
 	background-color:transparent !important;
@@ -217,8 +218,112 @@ body{
 	background:transparent url("../images/trash-white.png") center no-repeat ;
 }
 .trashIcon{
-	background:url("../images/trash-white.png") center no-repeat;
+	background: url("../images/trash-white.png") center no-repeat;
 }
 .table>tbody>tr>td{
 	font-size: 17px;
+}
+
+.send_content{
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 20px;
+	border: solid 1px #fff;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.receive_content{
+	display: inline-block;
+	width: 100%;
+	margin: 20px 0;
+	border: solid 1px #fff;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.send_content h3,.receive_content h3{
+	text-align: center;
+	margin: 0 0 20px;
+	color: rgb(144, 205, 26);
+
+}
+
+.container_new{
+	width: 600px;
+	margin: 0 auto;
+}
+
+.send_content span,.receive_content span{
+	display: inline-block;
+	width: 100%;
+	font-size: 16px;
+	margin: 0 0 10px;
+	font-weight: normal;
+}
+
+.send_content input[type="text"] {
+    float: none;
+    width: 100% !important;
+    font: 20px comic sans ms;
+    background: none;
+    border: none;
+    border-bottom: solid 1px #FFF;
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    display: inline-block;
+    height: auto;
+    text-align: left;
+    box-shadow:none;
+    border-radius: 0;
+    margin: 0 0 15px;
+
+}
+
+.send_content input[type="button"],.receive_content input[type="button"] {
+    float: none;
+    font: 20px comic sans ms;
+    background: none;
+    border: solid 1px #FFF;
+    display: inline-block;
+    width: auto;
+    padding: 10px 30px;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.receive_content p{
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 20px 0 0;
+	position: relative;
+	min-height: 50px;
+	background: rgba(255,255,255,0.6);
+	color: #000;
+	font-size: 20px;
+}
+
+.receive_content p:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: solid 15px transparent;
+    border-right: solid 15px transparent;
+    border-bottom: solid 15px rgba(255,255,255,0.6);
+    position: absolute;
+    left: 38px;
+    top: -15px;
+}
+
+.send_content input[type="button"]:hover,.receive_content input[type="button"]:hover{
+	opacity: 0.8;
+}
+
+.send_content label{
+	width: 100%;
 }

@@ -54,21 +54,30 @@ class SendMsg extends Component {
 
     render() {
       return (
-        <div className="container">
+      <div className="container_out">
+
+          <div className="top_header">
+               <h2>RabbitMq</h2>
+            </div>
+            <div className="content_inner">
+        <div className="container_new">
+          <div className="send_content">
+          <h3>Send Message</h3>
           <form onSubmit={this.handleSubmit}>
             <label>
-              Send Msg:
-              <input type="text" maxLength="10" value={this.state.value} onChange={this.handleChange} className="form-control"/>
+              <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control"/>
             </label><br/>
             <input type="button" value="Send" className="btn btn-primary" onClick={this.handleClick} />
           </form>
-           <div className="container1">
+          </div>
+           <div className="container1 receive_content">
+           <h3>Receive Message</h3>
            <input type="button" value="Receive" className="btn btn-primary" onClick={this.handleClick}/>
-           <p>Message</p>
-                {this.tabRow()}
+           {this.tabRow()}
         </div>
       </div>
-
+      </div>
+       </div>
       );
     }
   }
