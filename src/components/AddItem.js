@@ -33,7 +33,7 @@ class AddItem extends Component {
           <form className="form_content" onSubmit={this.handleSubmit}>
             <label>
                 <span>Add Member into the list</span>
-              <input type="text" maxLength="10" value={this.state.value} onChange={this.handleChange} className="form-control"/>
+              <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control"/>
             </label><br/>
             <input type="submit" value="Submit" className="btn btn-primary"/>
           </form>

@@ -6,7 +6,7 @@ class App extends Component {
     return (
         <div className="App-header frontend-header">
           <div>
-            <h2>Welcome to <span>Full Stack Development</span></h2>
+            <h2>Welcome to <span>BanyanX</span></h2>
           </div>
           <div className="linking-button">
             <span> <Link to="/index">Start Now</Link></span>

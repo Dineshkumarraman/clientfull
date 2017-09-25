@@ -24,11 +24,11 @@ class TableRow extends Component {
             {this.props.obj.item}
           </td>
           <td>
-          <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
+          <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary editIcon"></Link>
         </td>
           <td>
             <form onSubmit={this.handleSubmit}>
-              <input type="submit" value="Delete" className="btn btn-danger"/>
+              <input type="submit" value="" className="btn btn-danger trashIcon"/>
             </form>
           </td>
         </tr>

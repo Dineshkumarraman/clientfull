@@ -30,13 +30,12 @@ class IndexItem extends Component {
 
     render() {
       return (
-        <div className="container_out">
+        <div className="container_out listPage">
             <div className="top_header">
-               <h2>List the Members</h2>
+               <h1>Banyanites</h1>
             </div>
             <div className="top_header_add">
               <div className="container">
-                <h3>Add Member</h3>
                 <div className="linking-button">
                   <span> <Link to="/add-item">Add member</Link></span>
                 </div>
@@ -46,10 +45,10 @@ class IndexItem extends Component {
             <table className="table table-bordered">
               <thead>
                 <tr>
-                  <td>No.</td>
-                  <td>Item</td>
-                  <td>Edit</td>
-                  <td>Delete</td>
+                  <td className="col-xs-2">ID</td>
+                  <td className="col-xs-8">Banyanite</td>
+                  <td className="col-xs-1">Edit</td>
+                  <td className="col-xs-1">Delete</td>
                 </tr>
               </thead>
               <tbody>
