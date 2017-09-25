@@ -12,7 +12,7 @@ class IndexItem extends Component {
       this.addItemService = new ItemService();
     }
     componentWillMount(){
-      axios.get('http://13.90.196.105:4200/items')
+      axios.get('http://localhost:4200/items')
       .then(response => {
         this.setState({ items: response.data });
       })
