@@ -26,13 +26,13 @@ class AddItem extends Component {
       return (
          <div className="container_out">
           <div className="top_header">
-               <h2>Add Members</h2>
+               <h2>Add Member</h2>
             </div>
             <div className="content_inner">
         <div className="container">
           <form className="form_content" onSubmit={this.handleSubmit}>
             <label>
-                <span>Enter Banyanite in the list</span>
+                <span>Enter the name of Banyanite</span>
               <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control"/>
             </label><br/>
             <input type="submit" value="Submit" className="btn btn-primary"/>
