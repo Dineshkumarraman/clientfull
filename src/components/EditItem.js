@@ -36,13 +36,13 @@ class EditItem extends Component {
     return (
       <div className="container_out">
           <div className="top_header">
-               <h2>Add Members</h2>
+               <h2>Edit Member</h2>
             </div>
             <div className="content_inner">
           <div className="container">
             <form className="form_content" onSubmit={this.handleSubmit}>
               <label>
-                <span>Edit member in the list</span>
+                <span>Enter the new name of Banyanite</span>
                 <input type="text" value={this.state.value.item} onChange={this.handleChange}  className="form-control"/>
               </label><br/>
               <input type="submit" value="Update" className="btn btn-primary"/>
