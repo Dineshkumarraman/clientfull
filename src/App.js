@@ -10,7 +10,9 @@ class App extends Component {
           </div>
           <div className="linking-button">
             <span> <Link to="/index">Start Now</Link></span>
+             <span> <Link to="/send-msg">Click to send message</Link></span>
           </div>
+
           <div>
             {this.props.children}
           </div>

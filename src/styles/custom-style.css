@@ -19,7 +19,7 @@ body{
 	height: 100vh;
 	position: relative;	
 	z-index: 2;
-	background: url(../images/welcome_banner.jpeg) center center no-repeat;
+	background: url(../images/welcome_banner.jpg) center center no-repeat;
 	background-size: cover;
 }
 .frontend-header:after{
@@ -142,16 +142,18 @@ body{
     float: left;
     width: 100%;
     font: 20px comic sans ms;
-    text-align: center;
+    text-align: left;
 }
 
 .form_content{
-	text-align: center;
+	text-align: left;
+	width: 400px;
+	margin: 0 auto;
 }
 
 .form_content label input[type="text"] {
     float: none;
-    width: 50%;
+    width: 100% !important;
     font: 20px comic sans ms;
     background: none;
     border: solid 2px comic sans ms;
@@ -161,7 +163,7 @@ body{
     padding: 10px;
     display: inline-block;
     height: auto;
-    text-align: center;
+    text-align: left;
 }
 
 .form_content input[type="submit"]{
