@@ -20,6 +20,10 @@ class IndexItem extends Component {
         console.log(error);
       })
     }
+    handleEntailmentRequest(e) {
+    e.preventDefault();
+    window.location.href=window.location.href;
+    }
     tabRow(){
       if(this.state.items instanceof Array){
         return this.state.items.map(function(object, i){
@@ -41,7 +45,7 @@ class IndexItem extends Component {
             <div className="top_header_add">
               <div className="container">
                 <div className="linking-button">
-                <span> <link><link></span>
+                <span> <Link to="/" onClick={this.handleEntailmentRequest.bind(this)}><img src={require('../images/refresh-button.png')} /></Link></span>
                   <span> <Link to="/add-item">Add member</Link></span>
                 </div>
              </div>
