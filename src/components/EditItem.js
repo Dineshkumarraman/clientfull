@@ -3,7 +3,7 @@ import axios from 'axios';
 import ItemService from './ItemService';
 import { Link } from 'react-router-dom';
 import validateLength from '../validateFolder/validate'
-
+var hostName=window.location.hostname;
 class EditItem extends Component {
 
   constructor(props) {
@@ -16,7 +16,7 @@ class EditItem extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:4200/items/edit/'+this.props.match.params.id)
+    axios.get('http://'+hostName+':4200/items/edit/'+this.props.match.params.id)
     .then(response => {
       this.setState({ value: response.data});
     })

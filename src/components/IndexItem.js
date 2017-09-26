@@ -4,6 +4,8 @@ import axios from 'axios';
 import TableRow from './TableRow';
 import { Link } from 'react-router-dom';
 
+var hostName=window.location.hostname;
+
 class IndexItem extends Component {
 
   constructor(props) {
@@ -12,7 +14,7 @@ class IndexItem extends Component {
       this.addItemService = new ItemService();
     }
     componentWillMount(){
-      axios.get('http://localhost:4200/items')
+      axios.get('http://'+hostName+':4200/items')
       .then(response => {
         this.setState({ items: response.data });
       })

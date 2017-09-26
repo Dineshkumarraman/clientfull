@@ -1,9 +1,9 @@
 import axios from 'axios';
-
+var hostName=window.location.hostname;
 class ItemService {
 
   sendData(data) {
-    axios.post('http://localhost:4200/items/add/post', {
+    axios.post('http://'+hostName+':4200/items/add/post', {
       item: data
     })
     .then(res => this.setState({ items: res.data }))
@@ -11,7 +11,7 @@ class ItemService {
   }
 
   updateData(data, id){
-    axios.post('http://localhost:4200/items/update/'+id, {
+    axios.post('http://'+hostName+':4200/items/update/'+id, {
       item: data
     })
     .then(res => this.setState({ items: res.data }))
@@ -19,12 +19,12 @@ class ItemService {
   }
 
   deleteData(id){
-    axios.get('http://localhost:4200/items/delete/'+id)
+    axios.get('http://'+hostName+':4200/items/delete/'+id)
     .then().catch(err => console.log(err))
   }
   
   sendMsgs(data) {
-    axios.post('http://localhost:4200/items/send', {
+    axios.post('http://'+hostName+':4200/items/send', {
       item: data
     })
     .then(res => this.setState({ items: res.data }))
@@ -32,7 +32,7 @@ class ItemService {
   }
 
    receiveMsgs(data) {
-    axios.post('http://localhost:4200/items/receive', {
+    axios.post('http://'+hostName+':4200/items/receive', {
       item: data
     })
     .then(res => this.setState({ items: res.data }))
