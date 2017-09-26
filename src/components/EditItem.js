@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ItemService from './ItemService';
+import validateLength from '../validateFolder/validate'
 
 class EditItem extends Component {
 
   constructor(props) {
       super(props);
+      this.state = {value: '' };
       this.addItemService = new ItemService();
+      this.validateLength1 = new validateLength(this.state.value);
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.state = {value: '' };
   }
 
   componentDidMount(){
-    axios.get('http://13.90.196.105:4200/items/edit/'+this.props.match.params.id)
+    axios.get('http://localhost:4200/items/edit/'+this.props.match.params.id)
     .then(response => {
       this.setState({ value: response.data});
     })
@@ -29,6 +31,7 @@ class EditItem extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.addItemService.updateData(this.state.value,this.props.match.params.id);
+    this.validateLength1.checkLength();
     this.props.history.push('/index');
   }
 

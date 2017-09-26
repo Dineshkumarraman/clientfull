@@ -1,6 +1,6 @@
 function validateLength(value){
 validateLength.prototype.checkLength = function() {
-  if(value.length<= 10){
+  if(value.length<= 15){
         return value.length;
     }
     else{
