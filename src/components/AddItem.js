@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ItemService from './ItemService';
+import { Link } from 'react-router-dom';
 
 class AddItem extends Component {
 
@@ -24,6 +25,10 @@ class AddItem extends Component {
     render() {
       return (
          <div className="container_out">
+         <div className="header_link">
+                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
+                <Link to="/send-msg"><img src={require('../images/chat-icon.png')} /></Link>
+            </div>
           <div className="top_header">
                <h2>Add Member</h2>
             </div>

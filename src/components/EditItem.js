@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ItemService from './ItemService';
+import { Link } from 'react-router-dom';
 import validateLength from '../validateFolder/validate'
 
 class EditItem extends Component {
@@ -38,6 +39,10 @@ class EditItem extends Component {
   render() {
     return (
       <div className="container_out">
+      <div className="header_link">
+                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
+                <Link to="/send-msg"><img src={require('../images/chat-icon.png')} /></Link>
+            </div>
           <div className="top_header">
                <h2>Edit Member</h2>
             </div>

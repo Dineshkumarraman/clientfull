@@ -31,6 +31,10 @@ class IndexItem extends Component {
     render() {
       return (
         <div className="container_out listPage">
+            <div className="header_link">
+                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
+                <Link to="/send-msg"><img src={require('../images/chat-icon.png')} /></Link>
+            </div>
             <div className="top_header">
                <h1>Banyanites</h1>
             </div>
