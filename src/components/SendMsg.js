@@ -3,6 +3,7 @@ import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './sendmessageTable/TableRow';
 import { Link } from 'react-router-dom';
+var hostName=window.location.hostname;
 
 class SendMsg extends Component {
 
@@ -33,7 +34,7 @@ class SendMsg extends Component {
          this.addItemService.sendMsgs(this.state.value);
       }
       else{
-       axios.get('http://localhost:4200/items/receive')
+       axios.get('http://'+hostName+':4200/items/receive')
       .then(response => {
         console.log("data",response.data)
         this.setState({ items: response.data });
