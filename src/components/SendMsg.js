@@ -3,6 +3,7 @@ import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './sendmessageTable/TableRow';
 import {Link} from 'react-router-dom';
+var hostName=window.location.hostname;
 
 class SendMsg extends Component {
 
@@ -30,7 +31,7 @@ class SendMsg extends Component {
         event.preventDefault();
     }
     componentWillMount() {
-        axios.get('http://localhost:4200/items/receive')
+        axios.get('http://'+hostName+':4200/items/receive')
             .then(response => {
                 console.log("data", response.data)
                 this.setState({
@@ -43,7 +44,7 @@ class SendMsg extends Component {
         setInterval(this.receiveMqMsg, 1000);
     }
     receiveMqMsg() {
-        axios.get('http://localhost:4200/items/receiveMq')
+        axios.get('http://'+hostName+':4200/items/receiveMq')
             .then(response => {
                 this.setState({
                     items: response.data
