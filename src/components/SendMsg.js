@@ -41,7 +41,7 @@ class SendMsg extends Component {
             .catch(function(error) {
                 console.log("error", error);
             })
-        setInterval(this.receiveMqMsg, 1000);
+        setInterval(this.receiveMqMsg, 100);
     }
     receiveMqMsg() {
         axios.get('http://'+hostName+':4200/items/receiveMq')
