@@ -3,7 +3,7 @@ import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './sendmessageTable/TableRow';
 import {Link} from 'react-router-dom';
-var hostName=window.location.hostname;
+var hostName = window.location.hostname;
 
 class SendMsg extends Component {
 
@@ -88,8 +88,7 @@ class SendMsg extends Component {
           </form>
           </div>
            <div className="container1 receive_content">
-           <h3>Receive Message</h3>
-           <input type="button" value="Receive" className="btn btn-primary"/>
+           <h3>Received Message</h3>
            {this.tabRow()}
         </div>
       </div>
