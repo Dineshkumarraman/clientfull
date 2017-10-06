@@ -24,7 +24,7 @@ class ItemService {
   }
   
   sendMsgs(data) {
-    axios.post('http://'+hostName+':4200/items/send', {
+    axios.post('http://'+hostName+':4200/items/send?testQuery1='+ Math.random(), {
       item: data
     })
     .then(res => this.setState({ items: res.data }))

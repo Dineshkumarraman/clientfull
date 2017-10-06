@@ -1,49 +1,62 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './sendmessageTable/TableRow';
-import { Link } from 'react-router-dom';
-var hostName=window.location.hostname;
+import {Link} from 'react-router-dom';
+var hostName = window.location.hostname;
 
 class SendMsg extends Component {
 
-  constructor(props) {
-      super(props);
-      this.state = {value: '', items: ''};
-      this.addItemService = new ItemService();
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: '',
+            items: ''
+        };
+        this.addItemService = new ItemService();
 
-       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-       this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.receiveMqMsg = this.receiveMqMsg.bind(this);
     }
 
     handleChange(event) {
-      this.setState({value: event.target.value});
+        this.setState({
+            value: event.target.value
+        });
     }
 
     handleSubmit(event) {
-      event.preventDefault();
-      console.log("called");
-     
-     
+        event.preventDefault();
     }
-    handleClick(event){
-      console.log("inputName", event.target.value);
-             event.preventDefault();
-      if(event.target.value=="Send"){
-         this.addItemService.sendMsgs(this.state.value);
-      }
-      else{
-       axios.get('http://'+hostName+':4200/items/receive')
-      .then(response => {
-        console.log("data",response.data)
-        this.setState({ items: response.data });
-        // this.setState({value: event.target.value});
-      })
-      .catch(function (error) {
-        console.log("error",error);
-      })
+    componentWillMount() {
+        axios.get('http://'+hostName+':4200/items/receive')
+            .then(response => {
+                console.log("data", response.data)
+                this.setState({
+                    items: response.data
+                });
+            })
+            .catch(function(error) {
+                console.log("error", error);
+            })
+        setInterval(this.receiveMqMsg, 100);
     }
+    receiveMqMsg() {
+        axios.get('http://'+hostName+':4200/items/receiveMq')
+            .then(response => {
+                this.setState({
+                    items: response.data
+                });
+            })
+            .catch(function(error) {
+                console.log("error", error);
+            })
+    }
+    handleClick(event) {
+        event.preventDefault();
+            this.addItemService.sendMsgs(this.state.value);
     }
      tabRow(){
       if(this.state.items instanceof Array){
@@ -75,8 +88,7 @@ class SendMsg extends Component {
           </form>
           </div>
            <div className="container1 receive_content">
-           <h3>Receive Message</h3>
-           <input type="button" value="Receive" className="btn btn-primary" onClick={this.handleClick}/>
+           <h3>Received Message</h3>
            {this.tabRow()}
         </div>
       </div>

@@ -107,7 +107,7 @@ body{
 	width: 100%;
 	min-height: 100vh;
 	background: url(../images/page_background.png) no-repeat;
-	background-size: cover;
+	background-attachment: fixed;
 }
 
 .top_header_add{
@@ -317,8 +317,9 @@ body{
     border-right: solid 15px transparent;
     border-bottom: solid 15px rgba(255,255,255,0.6);
     position: absolute;
-    left: 38px;
+    left: 50%;
     top: -15px;
+    margin-left: -14px;
 }
 
 .send_content input[type="button"]:hover,.receive_content input[type="button"]:hover{
