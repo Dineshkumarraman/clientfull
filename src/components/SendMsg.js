@@ -59,19 +59,17 @@ class SendMsg extends Component {
             this.addItemService.sendMsgs(this.state.value);
     }
      tabRow(){
-      if(this.state.items instanceof Array){
-        return this.state.items.map(function(object, i){
+      if (this.state.items instanceof Array){
+        return this.state.items.map(function(object, i) {
             return <TableRow obj={object} key={i} />;
         })
       }
     }
-    
-
     render() {
       return (
       <div className="container_out">
            <div className="header_link">
-                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
+                <Link to="/"><img alt="home-icon" src={require('../images/home-icon.png')} /></Link>
             </div>
           <div className="top_header">
                <h2>RabbitMq</h2>

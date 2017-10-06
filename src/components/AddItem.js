@@ -6,14 +6,14 @@ class AddItem extends Component {
 
   constructor(props) {
       super(props);
-      this.state = {value: ''};
+      this.state = { value: '' };
       this.addItemService = new ItemService();
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-      this.setState({value: event.target.value});
+      this.setState({ value: event.target.value });
     }
 
     handleSubmit(event) {
@@ -26,8 +26,8 @@ class AddItem extends Component {
       return (
          <div className="container_out">
          <div className="header_link">
-                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
-                <Link to="/send-msg"><img alt="image" src={require('../images/chat-icon.png')} /></Link>
+                <Link to="/"><img alt="home-icon" src={require('../images/home-icon.png')} /></Link>
+                <Link to="/send-msg"><img alt="chat-icon" src={require('../images/chat-icon.png')} /></Link>
             </div>
           <div className="top_header">
                <h2>Add Member</h2>

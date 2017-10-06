@@ -24,7 +24,7 @@ class TableRow extends Component {
             {this.props.obj.item}
           </td>
           <td>
-          <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary editIcon"></Link>
+          <Link to={"/edit/" + this.props.obj._id} className="btn btn-primary editIcon"></Link>
         </td>
           <td>
             <form onSubmit={this.handleSubmit}>

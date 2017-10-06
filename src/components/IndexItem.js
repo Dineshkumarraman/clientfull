@@ -38,8 +38,8 @@ class IndexItem extends Component {
       return (
         <div className="container_out listPage">
             <div className="header_link">
-                <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
-                <Link to="/send-msg"><img src={require('../images/chat-icon.png')} /></Link>
+                <Link to="/"><img alt="home-icon" src={require('../images/home-icon.png')} /></Link>
+                <Link to="/send-msg"><img alt="chat-icon" src={require('../images/chat-icon.png')} /></Link>
             </div>
             <div className="top_header">
                <h1>Banyanites</h1>
@@ -47,7 +47,7 @@ class IndexItem extends Component {
             <div className="top_header_add">
               <div className="container">
                 <div className="linking-button">
-                <span> <Link to="/" onClick={this.handleEntailmentRequest.bind(this)}><img src={require('../images/refresh-button.png')} /></Link></span>
+                <span> <Link to="/" onClick={this.handleEntailmentRequest.bind(this)}><img alt="refresh-button" src={require('../images/refresh-button.png')} /></Link></span>
                   <span> <Link to="/add-item">Add member</Link></span>
                 </div>
              </div>
