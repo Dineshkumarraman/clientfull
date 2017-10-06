@@ -1,11 +1,8 @@
 module.exports = function(grunt) {
 
-   grunt.initConfig({
-   jshint: {
-       all: [ 'gruntfile.js' ]
-   },
+   grunt.initConfig({  
     jscs: {
-            src: "<%= jshint.all %>"
+            all: [ 'gruntfile.js' ]
         },
     htmlhint: {
       all: {
@@ -18,10 +15,10 @@ module.exports = function(grunt) {
 
    watch: {
        files: [ 'gruntfile.js','public/index.html','src/styles/custom-style.css' ],
-       tasks: [ 'jshint','htmlhint','stylelint' ]
+       tasks: [ 'jscs','htmlhint','stylelint' ]
    }
-});
-   grunt.loadNpmTasks('grunt-contrib-jshint');
+});    
+   
    grunt.loadNpmTasks('grunt-contrib-watch');
    grunt.loadNpmTasks("grunt-jscs");
    grunt.loadNpmTasks('grunt-htmlhint');
