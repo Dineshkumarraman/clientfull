@@ -27,7 +27,7 @@ class AddItem extends Component {
          <div className="container_out">
          <div className="header_link">
                 <Link to="/"><img src={require('../images/home-icon.png')} /></Link>
-                <Link to="/send-msg"><img src={require('../images/chat-icon.png')} /></Link>
+                <Link to="/send-msg"><img alt="image" src={require('../images/chat-icon.png')} /></Link>
             </div>
           <div className="top_header">
                <h2>Add Member</h2>

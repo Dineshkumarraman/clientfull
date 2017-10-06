@@ -4,31 +4,31 @@ import axios from 'axios';
 import TableRow from './TableRow';
 import { Link } from 'react-router-dom';
 
-var hostName=window.location.hostname;
+var hostName = window.location.hostname;
 
 class IndexItem extends Component {
 
   constructor(props) {
       super(props);
-      this.state = {value: '', items: ''};
+      this.state = { value: '', items: '' };
       this.addItemService = new ItemService();
     }
     componentWillMount(){
-      axios.get('http://'+hostName+':4200/items')
+      axios.get('http://' + hostName + ':4200/items')
       .then(response => {
         this.setState({ items: response.data });
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       })
     }
     handleEntailmentRequest(e) {
     e.preventDefault();
-    window.location.href=window.location.href;
+    window.location.href = window.location.href;
     }
     tabRow(){
-      if(this.state.items instanceof Array){
-        return this.state.items.map(function(object, i){
+      if (this.state.items instanceof Array){
+        return this.state.items.map(function(object, i) {
             return <TableRow obj={object} key={i} />;
         })
       }
@@ -56,8 +56,8 @@ class IndexItem extends Component {
             <table className="table table-bordered">
               <thead>
                 <tr>
-                  <td className="col-xs-2">ID</td>
-                  <td className="col-xs-8">Banyanite</td>
+                  <td className="col-xs-3">ID</td>
+                  <td className="col-xs-7">Banyanite</td>
                   <td className="col-xs-1">Edit</td>
                   <td className="col-xs-1">Delete</td>
                 </tr>
