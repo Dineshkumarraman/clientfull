@@ -14,7 +14,7 @@ module.exports = function(grunt) {
   },
 
    watch: {
-       files: [ 'gruntfile.js','public/index.html','src/styles/custom-style.css'],
+       files: [ 'gruntfile.js','public/index.html','src/styles/custom-style.css' ],
        tasks: [ 'jscs','htmlhint','stylelint' ]
    }
 });    
