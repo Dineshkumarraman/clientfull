@@ -174,7 +174,7 @@ body{
 	border-radius: 0;
 }
 
-.form_content input[type="submit"]{
+.form_content input[type="submit"],.dangerBtn{
 	float: none;
 	font: 20px comic sans ms;
 	background: none;
@@ -183,6 +183,17 @@ body{
 	display: inline-block;
 	width: 150px;
 	margin-top: 20px;
+}
+
+.dangerBtn,.dangerBtn:hover,.dangerBtn:focus{
+	border-color:#f00;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 20px;
+	border-radius: 4px;
+	text-decoration: none;
+	text-align: center;
+	color: #f00;
 }
 
 .container_out table{
@@ -351,4 +362,10 @@ body{
 
 .header_link a:hover{
 	opacity: 0.8;
+}
+
+.validationMsg{
+	color:#f00;
+	font-size: 15px !important;
+	margin-top:5px;
 }

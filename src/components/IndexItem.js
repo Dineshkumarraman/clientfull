@@ -4,7 +4,7 @@ import axios from 'axios';
 import TableRow from './TableRow';
 import { Link } from 'react-router-dom';
 
-var hostName = window.location.hostname;
+var hostName = window.location.hostname,thisval='',stateVal='';
 
 class IndexItem extends Component {
 
@@ -22,14 +22,18 @@ class IndexItem extends Component {
         console.log(error);
       })
     }
-    handleEntailmentRequest(e) {
-    e.preventDefault();
-    window.location.href = window.location.href;
+    onRowDelete(id) {
+      var items = stateVal.state.items.filter(function(item, i) {
+        return item._id !== id;
+      })
+      stateVal.setState({items: items})
     }
     tabRow(){
       if (this.state.items instanceof Array){
+              thisval=this;
+              stateVal=this;
         return this.state.items.map(function(object, i) {
-            return <TableRow obj={object} key={i} />;
+            return <TableRow obj={object} key={i} data={thisval.state.items} onRowDelete={thisval.onRowDelete}/>;
         })
       }
     }
@@ -47,7 +51,6 @@ class IndexItem extends Component {
             <div className="top_header_add">
               <div className="container">
                 <div className="linking-button">
-                <span> <Link to="/" onClick={this.handleEntailmentRequest.bind(this)}><img alt="refresh-button" src={require('../images/refresh-button.png')} /></Link></span>
                   <span> <Link to="/add-item">Add member</Link></span>
                 </div>
              </div>
@@ -56,7 +59,6 @@ class IndexItem extends Component {
             <table className="table table-bordered">
               <thead>
                 <tr>
-                  <td className="col-xs-3">ID</td>
                   <td className="col-xs-7">Banyanite</td>
                   <td className="col-xs-1">Edit</td>
                   <td className="col-xs-1">Delete</td>

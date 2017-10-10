@@ -10,7 +10,7 @@ class App extends Component {
           </div>
           <div className="linking-button">
             <span> <Link to="/index">Start Now</Link></span>
-             <span> <Link to="/send-msg">Chat</Link></span>
+             <span> <Link to="/send-msg">Send Message</Link></span>
           </div>
 
           <div>

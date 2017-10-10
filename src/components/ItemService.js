@@ -6,7 +6,9 @@ class ItemService {
     axios.post('http://'+hostName+':4200/items/add/post', {
       item: data
     })
-    .then(res => this.setState({ items: res.data }))
+    .then(res => {
+      this.setState({ items: res.data });
+    })
     .catch(err => console.log(err))
   }
 
@@ -22,7 +24,7 @@ class ItemService {
     axios.get('http://'+hostName+':4200/items/delete/'+id)
     .then().catch(err => console.log(err))
   }
-  
+
   sendMsgs(data) {
     axios.post('http://'+hostName+':4200/items/send?testQuery1='+ Math.random(), {
       item: data
