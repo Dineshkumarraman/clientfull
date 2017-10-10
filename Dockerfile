@@ -3,4 +3,4 @@ RUN mkdir -p /usr/src/temp
 COPY . /usr/src/temp/
 WORKDIR /usr/src/temp
 RUN npm install
-RUN npm test
+CMD ["mocha", "tests/test.js", "--reporter", "spec"]
