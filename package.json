@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "mocha --reporter xunit-file",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -30,6 +30,7 @@
     "jshint": "^2.9.5",
     "mocha": "^3.5.3",
     "stylelint": "^8.1.1",
-    "stylelint-config-recommended": "^1.0.0"
+    "stylelint-config-recommended": "^1.0.0",
+    "xunit-file": "^1.0.0"
   }
 }
