@@ -8,7 +8,7 @@ class AddItem extends Component {
 
   constructor(props) {
       super(props);
-      this.state = { value: '', existingItem : '' };
+      this.state = { value: '', existingItem : '', buttonValue:'Submit' };
       this.addItemService = new ItemService();
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,26 +22,37 @@ class AddItem extends Component {
     handleSubmit(event) {
       event.preventDefault();
         if(this.state.value!==""){
-      axios.get('http://' + hostName + ':4200/items/isExisting/'+this.state.value)
-      .then(response => {
-        if(!response.data){
-           uniqName='';
-        this.addItemService.sendData(this.state.value);
-        this.props.history.push('/index');
+          axios.get('http://' + hostName + ':4200/items/isExisting/'+this.state.value.toLowerCase())
+          .then(response => {
+            if(!response.data.isExist){
+               uniqName='';
+                axios.post('http://'+hostName+':4200/items/add/post', {
+                  item: this.state.value.toLowerCase()
+                })
+                .then(res => {
+                  this.setState({ items: res.data });
+                   this.props.history.push('/index');
+                })
+                .catch(err => console.log(err))
+                this.setState({ buttonValue: "Submitting"});
+                //this.addItemService.sendData(this.state.value);
+               
+          }
+            else{
+              this.setState({ buttonValue: "Submit"});
+               uniqName='Name must be unique';
+            }
+               this.setState({ existingItem: uniqName });
+              })
+              .catch(function(error) {
+                console.log(error);
+              })
       }
       else{
-         uniqName='Name must be unique';
+         this.setState({ buttonValue: "Submit"});
+        uniqName='This field should not be empty';
+         this.setState({ existingItem: uniqName });
       }
-       this.setState({ existingItem: uniqName });
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
-            }
-            else{
-              uniqName='This field should not be empty';
-               this.setState({ existingItem: uniqName });
-            }
     }
 
     render() {
@@ -62,7 +73,7 @@ class AddItem extends Component {
               <input type="text" value={this.state.value} maxLength="20" onChange={this.handleChange} className="form-control" autoFocus/>
             <span className="validationMsg">{this.state.existingItem}</span>
             </label><br/>
-            <input type="submit" value="Submit" className="btn btn-primary"/>
+            <input type="submit" value={this.state.buttonValue} className="btn btn-primary"/>
              <Link to="/index" className="dangerBtn">Cancel</Link>
           </form>
       </div>

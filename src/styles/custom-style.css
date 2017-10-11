@@ -172,6 +172,7 @@ body{
 	border: 0px solid #fff;
 	border-bottom-width: 1px;
 	border-radius: 0;
+	text-transform: capitalize;
 }
 
 .form_content input[type="submit"],.dangerBtn{
@@ -202,6 +203,7 @@ body{
 
 .container_out table tr td{
 	padding: 10px;
+	text-transform: capitalize;
 }
 
 .container_out table thead tr td{
@@ -222,17 +224,20 @@ body{
 	text-align: center;
 	display: block;
 	margin: 0 auto;
+	outline: 0;
 }
 
 .editIcon:hover,.editIcon:focus,.editIcon:active,.editIcon.active{
 	background-color: transparent !important;
 	outline: 0;
 	background: transparent url("../images/edit-white.png") center no-repeat ;
+	outline: 0;
+	border:0;
 }
 
 .trashIcon:hover,.trashIcon:focus,.trashIcon:active,.trashIcon.active{
 	background-color: transparent !important;
-	outline: 0;
+	outline: 0 !important;
 	border: 0;
 	background: transparent url("../images/trash-white.png") center no-repeat ;
 }
