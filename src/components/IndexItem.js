@@ -59,6 +59,7 @@ class IndexItem extends Component {
             <table className="table table-bordered">
               <thead>
                 <tr>
+                  <td className="col-xs-1">S.No</td>
                   <td className="col-xs-7">Banyanite</td>
                   <td className="col-xs-1">Edit</td>
                   <td className="col-xs-1">Delete</td>

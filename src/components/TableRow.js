@@ -43,6 +43,8 @@ class TableRow extends Component {
     }
     render() {
         return ( <tr>
+         < td className="serialnumber text-center">
+         </td>
          < td> { this.props.obj.item }
          < /td>
          < td>

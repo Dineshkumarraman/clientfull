@@ -1,6 +1,7 @@
 body{
 	font-family: comic sans ms;
 	overflow-y: scroll;
+	counter-reset: section;
 }
 
 #root{
@@ -196,6 +197,10 @@ body{
 	color: #f00;
 }
 
+.serialnumber::before{
+	counter-increment: section;
+    content: counter(section);
+}
 .container_out table{
 	background: rgba(0,0,0,0.7);
 }
