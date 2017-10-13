@@ -8,4 +8,5 @@ validateLength.prototype.checkLength = function() {
     }
 };
 }
+/*comment */
 module.exports = validateLength;
